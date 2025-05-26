@@ -5,6 +5,11 @@ from pydantic_settings import BaseSettings
 
     
 class Settings(BaseSettings):
+    class Config:
+        case_sensitive = True
+        env_file = ".env"
+        extra = "ignore"  
+        
     PROJECT_NAME: str = "Sentinel Nexus"
     API_V1_STR: str = "/api/v1"
     
@@ -62,9 +67,15 @@ class Settings(BaseSettings):
     OPENROUTER_API_KEY: Optional[str] = None
     DEFAULT_LLM_MODEL: str = "openrouter/google/gemini-2.0-flash-exp:free"
 
-    class Config:
-        case_sensitive = True
-        env_file = ".env"
+    SOURCE_COMMIT: Optional[str] = None
+    COOLIFY_URL: Optional[str] = None
+    COOLIFY_FQDN: Optional[str] = None
+    COOLIFY_BRANCH: Optional[str] = None
+    COOLIFY_RESOURCE_UUID: Optional[str] = None
+    COOLIFY_CONTAINER_NAME: Optional[str] = None
+    GOOGLE_API_KEY: Optional[str] = None
+    PORT: Optional[str] = "8001"
+    HOST: Optional[str] = "0.0.0.0"
 
 
 settings = Settings()
