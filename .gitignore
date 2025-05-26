@@ -1,0 +1,32 @@
+# Backend Python
+backend/.venv/
+backend/__pycache__/
+backend/.mypy_cache/
+backend/.pytest_cache/
+
+# Frontend Node/Nuxt
+frontend/node_modules/
+frontend/.output/
+frontend/.nuxt/
+frontend/.cache/
+frontend/dist/
+frontend/.data/
+frontend/.nitro/
+
+# Logs
+logs
+*.log
+
+# Misc
+.DS_Store
+.fleet
+.idea
+
+# Local env files
+.env
+.env.*
+!.env.example
+__pycache__
+.venv
+docs
+BRIGHTDATA_CHALLENGE.md
